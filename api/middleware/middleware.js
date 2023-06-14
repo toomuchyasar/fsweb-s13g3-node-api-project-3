@@ -2,7 +2,13 @@ const userModel = require("../users/users-model")
 
 
 function logger(req, res, next) {
-  // SİHRİNİZİ GÖRELİM
+  console.log(
+    `[${new Date().toISOString()}] ${req.method} to ${req.url} from ${req.get(
+      'Origin'
+    )}`
+  );
+
+  next();
 }
 
 async function validateUserId(req, res, next) {
