@@ -2,12 +2,8 @@ const userModel = require("../users/users-model")
 
 
 function logger(req, res, next) {
-  console.log(
-    `[${new Date().toISOString()}] ${req.method} to ${req.url} from ${req.get(
-      'Origin'
-    )}`
-  );
-
+  // SİHRİNİZİ GÖRELİM
+  console.log(`Request created at ${new Date().toLocaleString()}, request method is ${req.method}, request url is ${req.originalUrl}`);
   next();
 }
 
